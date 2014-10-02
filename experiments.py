@@ -1,3 +1,4 @@
+# Just added my name to try out integration with openshift
 import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'school.settings')
 
