@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Mark the register</title>
+</head>
+<body>
+    <h1>Mark the Register for today</h1>
+    <form method="post" action="">
+     {% csrf_token %}
+        {{ formset.management_form }}
+        <table>
+            {%  for form in formset %}
+                <tr>
+                    <td>{{form.student_id.value}}</td>
+                    <td><input id="{{ form.student_id.id_for_label }}" name="{{ form.student_id.html_name }}" value="{{ form.student_id.value }}" type="hidden"/></td>
+                    <td><input id="{{ form.student_name.id_for_label }}" name="{{ form.student_name.html_name }}" value="{{ form.student_name.value }}" type="text"/></td>
+                    <td>{{form.present }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
