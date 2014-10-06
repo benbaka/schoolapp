@@ -63,4 +63,4 @@ class Waiter(models.Model):
     def __unicode__(self):
         return u"%s the waiter at %s" % (self.name, self.restaurant)
 
-    
+
