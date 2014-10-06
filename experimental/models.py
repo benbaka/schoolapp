@@ -37,3 +37,11 @@ class Article(models.Model):
 
     class Meta:
         ordering = ("headline",)
+
+
+class Place(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=80)
+
+    def __unicode__(self):
+        return u"%s the place" % self.name
