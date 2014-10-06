@@ -7,7 +7,7 @@
 <body>
     <ul>
         {% for place in object_list %}
-            <li>{{ place.name }}</li>
+            <li><a href="/place/{{ place.id }}">{{ place.name }}</a></li>
         {% endfor %}
     </ul>
 </body>
