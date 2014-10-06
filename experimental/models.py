@@ -48,7 +48,7 @@ class Place(models.Model):
 
 
 class Restaurant(models.Model):
-    place = models.OneToOneField(place, primary_key=True)
+    place = models.OneToOneField(Place, primary_key=True)
     serves_hot_dogs = models.BooleanField()
     serves_pizza = models.BooleanField()
 
