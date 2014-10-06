@@ -45,3 +45,22 @@ class Place(models.Model):
 
     def __unicode__(self):
         return u"%s the place" % self.name
+
+
+class Restaurant(models.Model):
+    place = models.OneToOneField(place, primary_key=True)
+    serves_hot_dogs = models.BooleanField()
+    serves_pizza = models.BooleanField()
+
+    def __unicode__(self):
+        return u"%s the restaurant" % self.place.name
+
+
+class Waiter(models.Model):
+    restaurant = models.ForeignKey(Restaurant)
+    name = models.CharField(max_length=500)
+
+    def __unicode__(self):
+        return u"%s the waiter at %s" % (self.name, self.restaurant)
+
+    
