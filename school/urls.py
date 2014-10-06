@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from experimental.views import PlaceList
+from experimental.views import PlaceList, PlaceDetailView, PlaceCreate
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -10,5 +10,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^school/', include("core.urls")),
-    url(r'^places/$',PlaceList.as_view(),)
+    url(r'^places/$', PlaceList.as_view()),
+    url(r'^place/(?P<pk>\d+)/$', PlaceDetailView.as_view(), name="place_detail"),
+    url(r'^place/add/$', PlaceCreate.as_view(), name="place_add"),
 )

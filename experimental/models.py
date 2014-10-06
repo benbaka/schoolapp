@@ -47,7 +47,7 @@ class Place(models.Model):
         return u"%s the place" % self.name
 
     def get_absolute_url(self):
-        return reverse("place", kwargs={'pk':self.pk})
+        return reverse("place_detail", kwargs={'pk': self.pk})
 
 
 class Restaurant(models.Model):
